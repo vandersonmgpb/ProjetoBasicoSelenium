@@ -1,8 +1,15 @@
 package br.pb.fcoaraujo.pages;
 
+import static br.pb.fcoaraujo.core.DriverFactory.getDriver;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import br.pb.fcoaraujo.core.BasePage;
+import br.pb.fcoaraujo.core.DriverFactory;
 
 public class MovimentacaoPage extends BasePage {
 	
@@ -40,6 +47,15 @@ public class MovimentacaoPage extends BasePage {
 	
 	public String obterMensagemSucesso() {
 		return obterTexto(By.xpath("//div[@class='alert alert-success']"));
+	}
+	
+	public List<String> obterErros(){
+		List<WebElement> erros = getDriver().findElements(By.xpath("//div[@class='alert alert-danger']//li"));
+		List<String> retorno = new ArrayList<String>();
+		for(WebElement erro: erros) {
+			retorno.add(erro.getText());
+		}
+		return retorno;
 	}
 	
 }
