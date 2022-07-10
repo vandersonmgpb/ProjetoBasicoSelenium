@@ -1,7 +1,5 @@
 package br.pb.fcoaraujo.pages;
 
-import org.openqa.selenium.By;
-
 import br.pb.fcoaraujo.core.BasePage;
 import br.pb.fcoaraujo.core.DriverFactory;
 
@@ -20,7 +18,7 @@ public class LoginPage extends BasePage {
 	}
 	
 	public void entrar() {
-		clicarBotao(By.xpath("//button[.='Entrar']"));
+		clicarBotaoPorTexto("Entrar");
 	}
 	
 	public void logar(String email, String senha) {
