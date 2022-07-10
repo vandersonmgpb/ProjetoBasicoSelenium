@@ -1,6 +1,9 @@
 package br.pb.fcoaraujo.tests;
 
+import static br.pb.fcoaraujo.utils.DataUtils.obterDataFormatada;
+
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
@@ -9,7 +12,7 @@ import org.junit.Test;
 import br.pb.fcoaraujo.core.BaseTest;
 import br.pb.fcoaraujo.pages.MenuPage;
 import br.pb.fcoaraujo.pages.MovimentacaoPage;
-import net.bytebuddy.implementation.auxiliary.MethodCallProxy.AssignableSignatureCall;
+import br.pb.fcoaraujo.utils.DataUtils;
 
 public class MovimentacaoTest extends BaseTest{
 	private MenuPage menuPage = new MenuPage();
@@ -48,6 +51,26 @@ public class MovimentacaoTest extends BaseTest{
 			    "Valor é obrigatório",
 			    "Valor deve ser um número")));
 		Assert.assertEquals(6, erros.size());
+	}
+	
+	@Test
+	public void testInserirMovimentacaoFutura() {
+		menuPage.acessarTelaInserirMovimentacao();
 		
+		Date dataFutura = DataUtils.obterDataComDiferencaDias(5);
+		
+		movPage.setDataMovimentacao(obterDataFormatada(dataFutura));
+		movPage.setDataPagamento(obterDataFormatada(dataFutura));
+		movPage.setDescricao("Movimentacao do Teste");
+		movPage.setInteressado("Interessado Qualquer");
+		movPage.setValor("500");
+		movPage.setConta("Conta do Teste Alterada");
+		movPage.setStatusPago();
+		movPage.salvar();
+		
+		List<String> erros = movPage.obterErros();
+		Assert.assertTrue(
+				erros.contains("Data da Movimentação deve ser menor ou igual à data atual"));
+		Assert.assertEquals(1, erros.size());
 	}
 }

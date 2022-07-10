@@ -9,7 +9,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import br.pb.fcoaraujo.core.BasePage;
-import br.pb.fcoaraujo.core.DriverFactory;
 
 public class MovimentacaoPage extends BasePage {
 	
