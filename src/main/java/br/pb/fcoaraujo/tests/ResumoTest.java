@@ -1,5 +1,6 @@
 package br.pb.fcoaraujo.tests;
 
+
 import static br.pb.fcoaraujo.core.DriverFactory.getDriver;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import br.pb.fcoaraujo.core.BaseTest;
 import br.pb.fcoaraujo.core.DriverFactory;
 import br.pb.fcoaraujo.pages.MenuPage;
 import br.pb.fcoaraujo.pages.ResumoPage;
+
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ResumoTest extends BaseTest {

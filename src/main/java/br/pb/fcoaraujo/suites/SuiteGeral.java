@@ -22,22 +22,20 @@ import br.pb.fcoaraujo.tests.SaldoTest;
 	SaldoTest.class,
 	ResumoTest.class
 })
-
-
 public class SuiteGeral {
 	private static LoginPage page = new LoginPage();
 	
 	@BeforeClass
-	public static void inicializa() {
+	public static void inicializa(){
 		page.acessarTelaInicial();
 		
-		page.setEmail("contachaves@test");
-		page.setSenha("0123");
+		page.setEmail("wagner@costa");
+		page.setSenha("123456");
 		page.entrar();
 	}
-
+	
 	@AfterClass
-	public static void finaliza() {
+	public static void finaliza(){
 		DriverFactory.killDriver();
 	}
 }
