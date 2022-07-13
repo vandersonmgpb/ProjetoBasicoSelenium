@@ -29,8 +29,8 @@ public class SuiteGeral {
 	public static void inicializa(){
 		page.acessarTelaInicial();
 		
-		page.setEmail("wagner@costa");
-		page.setSenha("123456");
+		page.setEmail("contachaves@test");
+		page.setSenha("0123");
 		page.entrar();
 	}
 	

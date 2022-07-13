@@ -30,7 +30,7 @@ public class ResumoTest extends BaseTest {
 		
 		resumoPage.excluirMovimentacao();
 		
-		Assert.assertEquals("Movimentação removida com sucesso!", 
+		Assert.assertEquals("MovimentaÃ§Ã£o removida com sucesso!", 
 				resumoPage.obterMensagemSucesso());
 	}
 	
