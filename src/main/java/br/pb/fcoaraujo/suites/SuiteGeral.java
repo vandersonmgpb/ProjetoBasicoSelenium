@@ -34,8 +34,9 @@ public class SuiteGeral {
 		page.entrar();
 	}
 	
-	@AfterClass
+	@AfterClass 
 	public static void finaliza(){
 		DriverFactory.killDriver();
+		
 	}
 }
