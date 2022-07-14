@@ -13,17 +13,14 @@ import org.openqa.selenium.support.ui.Select;
 
 public class BasePage {
 	
-	/**********TextField e TextArena 
-	 * @throws InterruptedException **********/
+	/**********TextField e TextArena **********/
 	
-	public void escrever(By by, String texto) throws InterruptedException {
-		Thread.sleep(2);
+	public void escrever(By by, String texto) {
 		getDriver().findElement(by).clear();
 		getDriver().findElement(by).sendKeys(texto);
 	}	
 		
-	public void escrever(String id_campo, String texto) throws InterruptedException{
-		
+	public void escrever(String id_campo, String texto){
 		escrever(By.id(id_campo), texto);
 	}
 	
